@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Recuerdo nuevo</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-row>
+    <ion-col col-10></ion-col>
+    <ion-col col-2>
+      <ion-icon name="camera" color="primary" style="font-size: xx-large"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <ion-col col-12>
+    <img src="" alt="">
+  </ion-col>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Lugar</ion-label>
+      <ion-input type="text" [(ngModel)]="location" [disabled]="true"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer *ngIf="edit">
+  <ion-row>
+    <ion-col col-4 text-center>
+      <ion-icon name="logo-whatsapp" color="primary" style="font-size: xx-large"></ion-icon>
+    </ion-col>
+    <ion-col col-4 text-center (click)="editMemory()">
+      <ion-icon name="create" color="primary" style="font-size: xx-large"></ion-icon>
+    </ion-col>
+    <ion-col col-4 text-center (click)="deleteMemory()">
+      <ion-icon name="trash" color="primary" style="font-size: xx-large"></ion-icon>
+    </ion-col>
+  </ion-row>
+</ion-footer>

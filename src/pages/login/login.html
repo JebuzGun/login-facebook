@@ -1,0 +1,55 @@
+<ion-content no-bounce>
+  <div style="height: 6em"></div>
+  <ion-row>
+    <ion-col col-4></ion-col>
+    <ion-col col-4>
+      <img src="assets/imgs/facebook_logo.png">
+    </ion-col>
+    <ion-col col-4></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-2></ion-col>
+    <ion-col col-8>
+      <button ion-button [outline]="true" icon-only icon-left [block]="true">
+        <ion-icon name="logo-facebook"></ion-icon>Login Facebook
+      </button>
+    </ion-col>
+    <ion-col col-2></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-5></ion-col>
+    <ion-col col-2 text-center>
+      <p>o</p>
+    </ion-col>
+    <ion-col col-5></ion-col>
+  </ion-row>
+  <form [formGroup]="formLogin">
+      <ion-item>
+        <ion-label fixed>Usuario</ion-label>
+        <ion-input formControlName="user" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Password</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+    <ion-row>
+      <ion-col col-2></ion-col>
+      <ion-col col-8>
+        <button ion-button [outline]="true" icon-left
+                [block]="true" [disabled]="formLogin.invalid"
+                (click)="loginSimple()">
+         Entrar
+        </button>
+      </ion-col>
+      <ion-col col-2></ion-col>
+    </ion-row>
+  </form>
+  <ion-row>
+    <ion-col col-12 text-right>
+      <ion-item no-lines>
+        <ion-label>Recordar usuario</ion-label>
+        <ion-checkbox [(ngModel)]="remember"></ion-checkbox>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-content>
