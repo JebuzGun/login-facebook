@@ -6,23 +6,31 @@
 <ion-content padding>
   <ion-row>
     <ion-col col-10></ion-col>
-    <ion-col col-2>
+    <ion-col col-2 (click)="getPicture()">
       <ion-icon name="camera" color="primary" style="font-size: xx-large"></ion-icon>
     </ion-col>
   </ion-row>
-  <ion-col col-12>
-    <img src="" alt="">
-  </ion-col>
+  <ion-row>
+    <ion-col col-12>
+      <img [src]="'data:image/jpeg;base64,'+rememberImage" [alt]="'Imagen del recuerdo'" *ngIf="rememberImage">
+    </ion-col>
+  </ion-row>
   <ion-list>
     <ion-item>
       <ion-label fixed>Nombre</ion-label>
-      <ion-input type="text" [(ngModel)]="name"></ion-input>
+      <ion-input type="text" [(ngModel)]="rememberName"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label fixed>Lugar</ion-label>
-      <ion-input type="text" [(ngModel)]="location" [disabled]="true"></ion-input>
+      <button ion-button outline block (click)="getLocation()">Obtener posición</button>
     </ion-item>
   </ion-list>
+  <ion-row>
+    <ion-col col-3></ion-col>
+    <ion-col col-6>
+      <button ion-button outline block round (click)="insertToMemory()">Ingresar recuerdo</button>
+    </ion-col>
+    <ion-col col-3></ion-col>
+  </ion-row>
 </ion-content>
 <ion-footer *ngIf="edit">
   <ion-row>

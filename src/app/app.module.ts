@@ -9,6 +9,7 @@ import { DataProvider } from '../providers/data/data';
 import { ImagePicker } from "@ionic-native/image-picker";
 import { Geolocation } from "@ionic-native/geolocation";
 import { Camera } from '@ionic-native/camera';
+import {Facebook} from "@ionic-native/facebook";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { Camera } from '@ionic-native/camera';
   providers: [
     StatusBar,
     SplashScreen,
+    Facebook,
     Camera,
     ImagePicker,
     Geolocation,
